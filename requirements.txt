@@ -1,0 +1,11 @@
+# Azure AI Projects SDK
+azure-ai-projects
+
+# Authentication
+azure-identity
+
+# Environment variables
+python-dotenv
+
+# CLI framework
+typer
