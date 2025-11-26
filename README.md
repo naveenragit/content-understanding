@@ -38,7 +38,7 @@ cp .env.example .env
 az login
 
 # 4. Test with a sample document
-python src/main.py analyze https://github.com/Azure-Samples/azure-ai-content-understanding-python/raw/refs/heads/main/data/invoice.pdf
+python src/main.py https://github.com/Azure-Samples/azure-ai-content-understanding-python/raw/refs/heads/main/data/invoice.pdf
 ```
 
 ### Get Your Endpoints
@@ -65,16 +65,16 @@ AZURE_CU_ENDPOINT=https://<your-foundry-resource>.services.ai.azure.com
 python src/main.py --help
 
 # Basic analysis (uses prebuilt-layout by default)
-python src/main.py analyze <url-or-file>
+python src/main.py <url-or-file>
 
 # Specific analyzer
-python src/main.py analyze -a prebuilt-invoice <url-or-file>
+python src/main.py -a prebuilt-invoice <url-or-file>
 
 # Save outputs
-python src/main.py analyze -o output.json -m output.md <url-or-file>
+python src/main.py -o output.json -m output.md <url-or-file>
 
 # Show full markdown
-python src/main.py analyze --full <url-or-file>
+python src/main.py --full <url-or-file>
 ```
 
 ### Common Analyzers
@@ -125,22 +125,22 @@ python src/main.py analyze --full <url-or-file>
 
 ```bash
 # Invoice processing
-python src/main.py analyze -a prebuilt-invoice --features keyValuePairs invoice.pdf
+python src/main.py -a prebuilt-invoice --features keyValuePairs invoice.pdf
 
 # Scientific paper
-python src/main.py analyze --features formulas --enable-figure-description paper.pdf
+python src/main.py --features formulas --enable-figure-description paper.pdf
 
 # Business report with charts
-python src/main.py analyze --enable-figure-analysis --chart-format markdown report.pdf
+python src/main.py --enable-figure-analysis --chart-format markdown report.pdf
 
 # Reviewed document
-python src/main.py analyze --enable-annotation reviewed-doc.pdf
+python src/main.py --enable-annotation reviewed-doc.pdf
 
 # RAG pipeline
-python src/main.py analyze -a prebuilt-documentSearch --enable-figure-description -m doc.md source.pdf
+python src/main.py -a prebuilt-documentSearch --enable-figure-description -m doc.md source.pdf
 
 # Comprehensive analysis
-python src/main.py analyze \
+python src/main.py \
     --features barcodes,formulas,languages \
     --enable-annotation \
     --enable-figure-description \
@@ -184,30 +184,30 @@ Content Understanding provides 80+ prebuilt analyzers for different use cases:
 
 | Document Type | Command |
 |---------------|---------|
-| Invoice | `python src/main.py analyze -a prebuilt-invoice --features keyValuePairs invoice.pdf` |
-| Receipt | `python src/main.py analyze -a prebuilt-receipt receipt.jpg` |
-| Contract | `python src/main.py analyze -a prebuilt-contract --enable-annotation contract.pdf` |
-| Research paper | `python src/main.py analyze --features formulas --enable-figure-description paper.pdf` |
-| Technical doc | `python src/main.py analyze --features barcodes,formulas --enable-figure-analysis spec.pdf` |
-| Presentation | `python src/main.py analyze --enable-figure-description --enable-figure-analysis slides.pdf` |
-| Form | `python src/main.py analyze --features keyValuePairs form.pdf` |
-| Engineering drawing | `python src/main.py analyze --features ocrHighResolution blueprint.pdf` |
+| Invoice | `python src/main.py -a prebuilt-invoice --features keyValuePairs invoice.pdf` |
+| Receipt | `python src/main.py -a prebuilt-receipt receipt.jpg` |
+| Contract | `python src/main.py -a prebuilt-contract --enable-annotation contract.pdf` |
+| Research paper | `python src/main.py --features formulas --enable-figure-description paper.pdf` |
+| Technical doc | `python src/main.py --features barcodes,formulas --enable-figure-analysis spec.pdf` |
+| Presentation | `python src/main.py --enable-figure-description --enable-figure-analysis slides.pdf` |
+| Form | `python src/main.py --features keyValuePairs form.pdf` |
+| Engineering drawing | `python src/main.py --features ocrHighResolution blueprint.pdf` |
 
 ### Save Options
 
 ```bash
 # Auto-save to results/ folder (enabled by default)
-python src/main.py analyze document.pdf
+python src/main.py document.pdf
 # Creates: results/document_result.json and results/document_output.md
 
 # Custom output files
-python src/main.py analyze -o custom.json -m custom.md document.pdf
+python src/main.py -o custom.json -m custom.md document.pdf
 
 # Disable auto-save
-python src/main.py analyze --no-save-results document.pdf
+python src/main.py --no-save-results document.pdf
 
 # Show full output in console
-python src/main.py analyze --full document.pdf
+python src/main.py --full document.pdf
 ```
 
 ---

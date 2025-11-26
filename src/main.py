@@ -3,9 +3,9 @@ Content Understanding example using azure-ai-projects SDK.
 
 Usage:
     python main.py --help
-    python main.py analyze https://example.com/document.pdf
-    python main.py analyze --analyzer prebuilt-layout https://example.com/doc.pdf
-    python main.py analyze C:/Users/YourName/Desktop/invoice.pdf
+    python main.py https://example.com/document.pdf
+    python main.py --analyzer prebuilt-layout https://example.com/doc.pdf
+    python main.py C:/Users/YourName/Desktop/invoice.pdf
 """
 
 import os

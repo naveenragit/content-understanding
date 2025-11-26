@@ -38,6 +38,7 @@ env/
 *~
 
 # Output files
+results/
 *.json
 *.md
 result.*

@@ -68,19 +68,19 @@ def main():
     
     run_example(
         "Basic analysis with default analyzer",
-        [python_exe, "src/main.py", "analyze", SAMPLE_INVOICE],
+        [python_exe, "src/main.py", SAMPLE_INVOICE],
         "Basic"
     )
     
     run_example(
         "Show full markdown output",
-        [python_exe, "src/main.py", "analyze", "--full", SAMPLE_INVOICE],
+        [python_exe, "src/main.py", "--full", SAMPLE_INVOICE],
         "Basic"
     )
     
     run_example(
         "Save to custom files",
-        [python_exe, "src/main.py", "analyze", "-o", "result.json", "-m", "result.md", SAMPLE_INVOICE],
+        [python_exe, "src/main.py", "-o", "result.json", "-m", "result.md", SAMPLE_INVOICE],
         "Basic"
     )
     
@@ -91,25 +91,25 @@ def main():
     
     run_example(
         "Invoice analyzer",
-        [python_exe, "src/main.py", "analyze", "-a", "prebuilt-invoice", SAMPLE_INVOICE],
+        [python_exe, "src/main.py", "-a", "prebuilt-invoice", SAMPLE_INVOICE],
         "Analyzers"
     )
     
     run_example(
         "Receipt analyzer",
-        [python_exe, "src/main.py", "analyze", "-a", "prebuilt-receipt", "https://example.com/receipt.jpg"],
+        [python_exe, "src/main.py", "-a", "prebuilt-receipt", "https://example.com/receipt.jpg"],
         "Analyzers"
     )
     
     run_example(
         "Document search for RAG",
-        [python_exe, "src/main.py", "analyze", "-a", "prebuilt-documentSearch", "-m", "rag_doc.md", SAMPLE_DOC],
+        [python_exe, "src/main.py", "-a", "prebuilt-documentSearch", "-m", "rag_doc.md", SAMPLE_DOC],
         "Analyzers"
     )
     
     run_example(
         "Contract analyzer",
-        [python_exe, "src/main.py", "analyze", "-a", "prebuilt-contract", "https://example.com/contract.pdf"],
+        [python_exe, "src/main.py", "-a", "prebuilt-contract", "https://example.com/contract.pdf"],
         "Analyzers"
     )
     
@@ -120,25 +120,25 @@ def main():
     
     run_example(
         "Extract barcodes (FREE)",
-        [python_exe, "src/main.py", "analyze", "--features", "barcodes", SAMPLE_DOC],
+        [python_exe, "src/main.py", "--features", "barcodes", SAMPLE_DOC],
         "Features"
     )
     
     run_example(
         "Extract formulas (PAID)",
-        [python_exe, "src/main.py", "analyze", "--features", "formulas", "https://example.com/paper.pdf"],
+        [python_exe, "src/main.py", "--features", "formulas", "https://example.com/paper.pdf"],
         "Features"
     )
     
     run_example(
         "Multiple features",
-        [python_exe, "src/main.py", "analyze", "--features", "barcodes,formulas,languages", SAMPLE_DOC],
+        [python_exe, "src/main.py", "--features", "barcodes,formulas,languages", SAMPLE_DOC],
         "Features"
     )
     
     run_example(
         "High-resolution OCR (PAID)",
-        [python_exe, "src/main.py", "analyze", "--features", "ocrHighResolution", "https://example.com/blueprint.pdf"],
+        [python_exe, "src/main.py", "--features", "ocrHighResolution", "https://example.com/blueprint.pdf"],
         "Features"
     )
     
@@ -149,37 +149,37 @@ def main():
     
     run_example(
         "Enable figure descriptions",
-        [python_exe, "src/main.py", "analyze", "--enable-figure-description", SAMPLE_DOC],
+        [python_exe, "src/main.py", "--enable-figure-description", SAMPLE_DOC],
         "Markdown Config"
     )
     
     run_example(
         "Extract charts as Chart.js JSON",
-        [python_exe, "src/main.py", "analyze", "--enable-figure-analysis", "--chart-format", "chartJs", SAMPLE_DOC],
+        [python_exe, "src/main.py", "--enable-figure-analysis", "--chart-format", "chartJs", SAMPLE_DOC],
         "Markdown Config"
     )
     
     run_example(
         "Extract charts as Markdown tables",
-        [python_exe, "src/main.py", "analyze", "--enable-figure-analysis", "--chart-format", "markdown", SAMPLE_DOC],
+        [python_exe, "src/main.py", "--enable-figure-analysis", "--chart-format", "markdown", SAMPLE_DOC],
         "Markdown Config"
     )
     
     run_example(
         "Combined figure processing",
-        [python_exe, "src/main.py", "analyze", "--enable-figure-description", "--enable-figure-analysis", SAMPLE_DOC],
+        [python_exe, "src/main.py", "--enable-figure-description", "--enable-figure-analysis", SAMPLE_DOC],
         "Markdown Config"
     )
     
     run_example(
         "Extract annotations (front matter)",
-        [python_exe, "src/main.py", "analyze", "--enable-annotation", "--annotation-format", "frontMatter", SAMPLE_DOC],
+        [python_exe, "src/main.py", "--enable-annotation", "--annotation-format", "frontMatter", SAMPLE_DOC],
         "Markdown Config"
     )
     
     run_example(
         "Extract annotations (markdown syntax)",
-        [python_exe, "src/main.py", "analyze", "--enable-annotation", "--annotation-format", "markdown", SAMPLE_DOC],
+        [python_exe, "src/main.py", "--enable-annotation", "--annotation-format", "markdown", SAMPLE_DOC],
         "Markdown Config"
     )
     
@@ -190,25 +190,25 @@ def main():
     
     run_example(
         "Scientific paper",
-        [python_exe, "src/main.py", "analyze", "--features", "formulas", "--enable-figure-description", "--enable-figure-analysis", "https://example.com/paper.pdf"],
+        [python_exe, "src/main.py", "--features", "formulas", "--enable-figure-description", "--enable-figure-analysis", "https://example.com/paper.pdf"],
         "Workflows"
     )
     
     run_example(
         "Business report",
-        [python_exe, "src/main.py", "analyze", "--enable-figure-description", "--enable-figure-analysis", "--chart-format", "markdown", "https://example.com/report.pdf"],
+        [python_exe, "src/main.py", "--enable-figure-description", "--enable-figure-analysis", "--chart-format", "markdown", "https://example.com/report.pdf"],
         "Workflows"
     )
     
     run_example(
         "Reviewed document",
-        [python_exe, "src/main.py", "analyze", "--enable-annotation", "--annotation-format", "frontMatter", "https://example.com/reviewed-doc.pdf"],
+        [python_exe, "src/main.py", "--enable-annotation", "--annotation-format", "frontMatter", "https://example.com/reviewed-doc.pdf"],
         "Workflows"
     )
     
     run_example(
         "Technical specification",
-        [python_exe, "src/main.py", "analyze", "--features", "barcodes,formulas", "--enable-figure-analysis", "https://example.com/spec.pdf"],
+        [python_exe, "src/main.py", "--features", "barcodes,formulas", "--enable-figure-analysis", "https://example.com/spec.pdf"],
         "Workflows"
     )
     
@@ -219,7 +219,7 @@ def main():
     
     run_example(
         "All features and options",
-        [python_exe, "src/main.py", "analyze",
+        [python_exe, "src/main.py",
          "-a", "prebuilt-layout",
          "--features", "barcodes,formulas,languages",
          "--enable-annotation",
